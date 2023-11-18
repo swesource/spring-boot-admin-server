@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: ${project.build.finalName}
+  boot:
+    admin:
+      client:
+        url: http://localhost:8090
+      #ui:
+        #brand: swesource
+        #?favicon: assets/img/favicon.ico
+        #title: <img src="assets/img/logo.png"><span>Title</span>
+server:
+  address: localhost
+  port: 8090
+management:
+  #  address: 127.0.0.1
+  #server:
+  #  port: 8091
+  security:
+    enabled: false
+  endpoints:
+    enabled-by-default: true
+    jmx:
+      exposure:
+        #exclude: "*"
+        include: "*"
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      show-values: ALWAYS # NEVER | ALWAYS | WHEN_AUTHORIZED
+    configprops:
+      show-values: ALWAYS # NEVER | ALWAYS | WHEN_AUTHORIZED
+    info:
+      enabled: true
+      show-details: always
+    health:
+      enabled: true
+      show-details: always
+    beans:
+      enabled: true
